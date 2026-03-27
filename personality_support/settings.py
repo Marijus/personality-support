@@ -31,7 +31,8 @@ SECRET_KEY = 'django-insecure-g@my&38+$r8+n+!v&i9e^l7ylbp4lnn*&a%_+5a-%=^-btf86l
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'personality-support-production.up.railway.app'
+    'personality-support-production.up.railway.app',
+    'perstest.com',
 ]
 
 
