@@ -30,4 +30,4 @@ RUN adduser --disabled-password myuser
 USER myuser
 
 # Run Gunicorn
-CMD ["sh", "-c", "python manage.py migrate && gunicorn personality_support.wsgi:application --bind 0.0.0.0:8000"]
+CMD ["gunicorn", "personality_support.wsgi:application", "--bind", "0.0.0.0:8000"]
