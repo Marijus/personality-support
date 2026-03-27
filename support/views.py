@@ -4,7 +4,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.shortcuts import redirect
 from django.template.loader import render_to_string
-from django.views.generic import FormView
+from django.views.generic import FormView, TemplateView
 
 from common.external_services.brevo.client import BrevoClient
 from support.forms import SupportForm
@@ -36,5 +36,8 @@ class SupportView(FormView):
             return redirect('support')
 
         logging.info("Support request received. data: %s", form.cleaned_data)
-        messages.success(self.request, "We've received your support request, we'll resolve your request right away.")
-        return redirect('support')
+        return redirect('thank-you')
+
+
+class ThankYouView(TemplateView):
+    template_name = "thank_you.html"

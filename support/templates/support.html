@@ -4,142 +4,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support</title>
+    <title>Get Your Refund — Fast & Easy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%2310b981'/><path fill='%23ffffff' d='M16 6c-3.9 0-7 3.1-7 7 0 2.8 1.6 5.2 4 6.3V23h1.5v-3h3v3H19v-3.7c2.4-1.1 4-3.5 4-6.3 0-3.9-3.1-7-7-7zm0 2c2.8 0 5 2.2 5 5 0 2-1.2 3.8-3 4.6V20h-4v-2.4c-1.8-.8-3-2.6-3-4.6 0-2.8 2.2-5 5-5z' transform='translate(0,1)'/></svg>">
     <style>
-        :root {
-            --primary-green: #10b981;
-            --cream-bg: #fef7ed;
-            --light-cream: #fffbf5;
-        }
-
         body {
-            background-color: white;
+            background-color: #f9fafb;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-
-        .custom-green {
-            background-color: var(--primary-green);
-        }
-
-        .custom-green:hover {
-            background-color: #059669;
-        }
-
-        .hero-section {
-            background-color: #fef7ed;
         }
     </style>
 </head>
 <body>
-<main>
-        <div class="hero-section py-12">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <div class="text-center mb-8">
-                    <h1 class="text-4xl font-bold text-gray-800 mb-4">Need Help? We're Here for You</h1>
-                    <p class="text-gray-600 text-lg">Get fast, friendly support from our team</p>
+
+    <!-- Hero -->
+    <div class="bg-white border-b border-gray-200">
+        <div class="max-w-3xl mx-auto px-4 py-12 text-center">
+            <div class="inline-flex items-center bg-emerald-50 text-emerald-700 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+                <i class="fas fa-check-circle mr-2"></i>
+                We process refunds within 24 hours
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Don't Recognize a Charge?</h1>
+            <p class="text-lg text-gray-600 max-w-xl mx-auto">No worries — we'll refund you right away. Just fill out the form below and we'll take care of it.</p>
+        </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto px-4 py-10">
+
+        {% if messages %}
+        {% for message in messages %}
+        <div class="bg-red-50 border border-red-200 p-5 rounded-xl mb-8 flex items-start gap-3">
+            <i class="fas fa-exclamation-circle text-red-500 text-xl mt-0.5"></i>
+            <p class="text-gray-700">{{ message }}</p>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        <!-- Recognize the website? -->
+        <div class="mb-8">
+            <p class="text-sm font-medium text-gray-500 mb-4 text-center">You may have purchased from one of our websites</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
+                <a href="https://big5personality.org" target="_blank" rel="noopener" class="flex items-center gap-2.5 bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-emerald-400 hover:shadow-sm transition-all group">
+                    <svg class="w-7 h-7 flex-shrink-0" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#10b981"/><path fill="#fff" d="M16 6c-3.9 0-7 3.1-7 7 0 2.8 1.6 5.2 4 6.3V23h1.5v-3h3v3H19v-3.7c2.4-1.1 4-3.5 4-6.3 0-3.9-3.1-7-7-7zm0 2c2.8 0 5 2.2 5 5 0 2-1.2 3.8-3 4.6V20h-4v-2.4c-1.8-.8-3-2.6-3-4.6 0-2.8 2.2-5 5-5z" transform="translate(0,1)"/></svg>
+                    <span class="text-sm font-semibold text-gray-700 group-hover:text-emerald-700 transition-colors">Big5Personality.org</span>
+                </a>
+                <a href="https://mypersonalitytest.org" target="_blank" rel="noopener" class="flex items-center gap-2.5 bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-emerald-400 hover:shadow-sm transition-all group">
+                    <svg class="w-7 h-7 flex-shrink-0" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#10b981"/><path fill="#fff" d="M16 6c-3.9 0-7 3.1-7 7 0 2.8 1.6 5.2 4 6.3V23h1.5v-3h3v3H19v-3.7c2.4-1.1 4-3.5 4-6.3 0-3.9-3.1-7-7-7zm0 2c2.8 0 5 2.2 5 5 0 2-1.2 3.8-3 4.6V20h-4v-2.4c-1.8-.8-3-2.6-3-4.6 0-2.8 2.2-5 5-5z" transform="translate(0,1)"/></svg>
+                    <span class="text-sm font-semibold text-gray-700 group-hover:text-emerald-700 transition-colors">MyPersonalityTest.org</span>
+                </a>
+                <a href="https://mycareertest.org" target="_blank" rel="noopener" class="flex items-center gap-2.5 bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-emerald-400 hover:shadow-sm transition-all group">
+                    <svg class="w-7 h-7 flex-shrink-0" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#10b981"/><path fill="#fff" d="M16 6c-3.9 0-7 3.1-7 7 0 2.8 1.6 5.2 4 6.3V23h1.5v-3h3v3H19v-3.7c2.4-1.1 4-3.5 4-6.3 0-3.9-3.1-7-7-7zm0 2c2.8 0 5 2.2 5 5 0 2-1.2 3.8-3 4.6V20h-4v-2.4c-1.8-.8-3-2.6-3-4.6 0-2.8 2.2-5 5-5z" transform="translate(0,1)"/></svg>
+                    <span class="text-sm font-semibold text-gray-700 group-hover:text-emerald-700 transition-colors">MyCareerTest.org</span>
+                </a>
+                <a href="https://myenneagramtest.org" target="_blank" rel="noopener" class="flex items-center gap-2.5 bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-emerald-400 hover:shadow-sm transition-all group">
+                    <svg class="w-7 h-7 flex-shrink-0" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#10b981"/><path fill="#fff" d="M16 6c-3.9 0-7 3.1-7 7 0 2.8 1.6 5.2 4 6.3V23h1.5v-3h3v3H19v-3.7c2.4-1.1 4-3.5 4-6.3 0-3.9-3.1-7-7-7zm0 2c2.8 0 5 2.2 5 5 0 2-1.2 3.8-3 4.6V20h-4v-2.4c-1.8-.8-3-2.6-3-4.6 0-2.8 2.2-5 5-5z" transform="translate(0,1)"/></svg>
+                    <span class="text-sm font-semibold text-gray-700 group-hover:text-emerald-700 transition-colors">MyEnneagramTest.org</span>
+                </a>
+                <a href="https://memoryhealthcheck.org" target="_blank" rel="noopener" class="flex items-center gap-2.5 bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-emerald-400 hover:shadow-sm transition-all group">
+                    <svg class="w-7 h-7 flex-shrink-0" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#10b981"/><path fill="#fff" d="M16 6c-3.9 0-7 3.1-7 7 0 2.8 1.6 5.2 4 6.3V23h1.5v-3h3v3H19v-3.7c2.4-1.1 4-3.5 4-6.3 0-3.9-3.1-7-7-7zm0 2c2.8 0 5 2.2 5 5 0 2-1.2 3.8-3 4.6V20h-4v-2.4c-1.8-.8-3-2.6-3-4.6 0-2.8 2.2-5 5-5z" transform="translate(0,1)"/></svg>
+                    <span class="text-sm font-semibold text-gray-700 group-hover:text-emerald-700 transition-colors">MemoryHealthCheck.org</span>
+                </a>
+                <a href="https://mentalhealthscores.org" target="_blank" rel="noopener" class="flex items-center gap-2.5 bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-emerald-400 hover:shadow-sm transition-all group">
+                    <svg class="w-7 h-7 flex-shrink-0" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#10b981"/><path fill="#fff" d="M16 6c-3.9 0-7 3.1-7 7 0 2.8 1.6 5.2 4 6.3V23h1.5v-3h3v3H19v-3.7c2.4-1.1 4-3.5 4-6.3 0-3.9-3.1-7-7-7zm0 2c2.8 0 5 2.2 5 5 0 2-1.2 3.8-3 4.6V20h-4v-2.4c-1.8-.8-3-2.6-3-4.6 0-2.8 2.2-5 5-5z" transform="translate(0,1)"/></svg>
+                    <span class="text-sm font-semibold text-gray-700 group-hover:text-emerald-700 transition-colors">MentalHealthScores.org</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Refund promise -->
+        <div class="bg-white border border-gray-200 rounded-xl p-6 mb-8">
+            <div class="grid sm:grid-cols-3 gap-5 text-center">
+                <div>
+                    <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-bolt text-emerald-600"></i>
+                    </div>
+                    <p class="font-semibold text-gray-800 text-sm">Fast Refunds</p>
+                    <p class="text-xs text-gray-500 mt-1">Processed within 24 hours</p>
+                </div>
+                <div>
+                    <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-comments text-emerald-600"></i>
+                    </div>
+                    <p class="font-semibold text-gray-800 text-sm">Quick Replies</p>
+                    <p class="text-xs text-gray-500 mt-1">Usually within a few hours</p>
+                </div>
+                <div>
+                    <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-shield-alt text-emerald-600"></i>
+                    </div>
+                    <p class="font-semibold text-gray-800 text-sm">No Hassle</p>
+                    <p class="text-xs text-gray-500 mt-1">No questions asked</p>
                 </div>
             </div>
         </div>
 
-        <div class="container mx-auto px-4 py-12 max-w-2xl">
-            {% if messages %}
-            {% for message in messages %}
-            <div class="bg-green-50 border-l-4 border-green-400 p-6 rounded-lg mb-8">
-                <div class="flex items-start space-x-3">
-                    <div class="text-2xl">&#10003;</div>
-                    <p class="text-gray-700 leading-relaxed">{{ message }}</p>
+        <!-- Why contact us -->
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
+            <div class="flex items-start gap-3">
+                <i class="fas fa-info-circle text-amber-500 text-lg mt-0.5"></i>
+                <div class="text-sm text-gray-700">
+                    <p class="font-semibold mb-1">Why request a refund here instead of a chargeback?</p>
+                    <ul class="space-y-1 text-gray-600">
+                        <li><strong>Faster</strong> — refund in 24h vs. weeks for a chargeback</li>
+                        <li><strong>Simpler</strong> — just fill in your email, no paperwork</li>
+                        <li><strong>Guaranteed</strong> — we honour every refund request</li>
+                    </ul>
                 </div>
             </div>
-            {% endfor %}
+        </div>
+
+        <!-- Form -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-gray-800 mb-6">Request a Refund or Get Help</h2>
+
+            {% if form.errors %}
+            <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+                {% for error in form.non_field_errors %}
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-exclamation-triangle text-red-500"></i>
+                    <p class="text-red-700 font-medium">{{ error }}</p>
+                </div>
+                {% endfor %}
+            </div>
             {% endif %}
 
-            <div class="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-8">
-                <p class="text-sm font-medium text-gray-700 mb-3">You may have purchased from one of these websites:</p>
-                <div class="flex flex-wrap gap-2">
-                    <a href="https://mycareertest.org" target="_blank" rel="noopener" class="inline-block bg-white border border-gray-200 rounded-full px-3 py-1 text-sm text-gray-600 hover:border-green-400 hover:text-green-700 transition-colors">mycareertest.org</a>
-                    <a href="https://mypersonalitytest.org" target="_blank" rel="noopener" class="inline-block bg-white border border-gray-200 rounded-full px-3 py-1 text-sm text-gray-600 hover:border-green-400 hover:text-green-700 transition-colors">mypersonalitytest.org</a>
-                    <a href="https://big5personality.org" target="_blank" rel="noopener" class="inline-block bg-white border border-gray-200 rounded-full px-3 py-1 text-sm text-gray-600 hover:border-green-400 hover:text-green-700 transition-colors">big5personality.org</a>
-                    <a href="https://myenneagramtest.org" target="_blank" rel="noopener" class="inline-block bg-white border border-gray-200 rounded-full px-3 py-1 text-sm text-gray-600 hover:border-green-400 hover:text-green-700 transition-colors">myenneagramtest.org</a>
-                    <a href="https://memoryhealthcheck.org" target="_blank" rel="noopener" class="inline-block bg-white border border-gray-200 rounded-full px-3 py-1 text-sm text-gray-600 hover:border-green-400 hover:text-green-700 transition-colors">memoryhealthcheck.org</a>
-                    <a href="https://mentalhealthscores.org" target="_blank" rel="noopener" class="inline-block bg-white border border-gray-200 rounded-full px-3 py-1 text-sm text-gray-600 hover:border-green-400 hover:text-green-700 transition-colors">mentalhealthscores.org</a>
+            <form id="supportForm" class="space-y-5" method="post">
+                {% csrf_token %}
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1.5">
+                        Email Address <span class="text-red-500">*</span>
+                    </label>
+                    {{ form.email }}
+                    <p class="text-xs text-gray-400 mt-1">Use the email you purchased with so we can find your order</p>
                 </div>
-            </div>
 
-            <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-lg mb-8">
-                <div class="flex items-start space-x-3">
-                    <div class="text-2xl">&#128161;</div>
-                    <div>
-                        <p class="text-gray-700 leading-relaxed">
-                            We respond very fast (usually within a few hours, always within 24h). Please contact us here instead of filing a chargeback — we'll resolve your issue right away.
-                        </p>
-                    </div>
+                <div>
+                    <label for="requestType" class="block text-sm font-medium text-gray-700 mb-1.5">
+                        Request Type
+                    </label>
+                    {{ form.request_type }}
                 </div>
-            </div>
 
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
-                <h2 class="text-2xl font-bold text-gray-800 mb-6">Contact Support</h2>
-
-                {% if form.errors %}
-                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-                    {% for error in form.non_field_errors %}
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-exclamation-triangle text-red-500"></i>
-                        <p class="text-red-700 font-medium">{{ error }}</p>
-                    </div>
-                    {% endfor %}
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1.5">
+                        Anything else? <span class="text-gray-400 font-normal">(optional)</span>
+                    </label>
+                    {{ form.message }}
                 </div>
-                {% endif %}
 
-                <form id="supportForm" class="space-y-6" method="post">
-                    {% csrf_token %}
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                            Email Address <span class="text-red-500">*</span>
-                        </label>
-                        {{ form.email }}
-                    </div>
-
-                    <div>
-                        <label for="requestType" class="block text-sm font-medium text-gray-700 mb-2">
-                            Request Type
-                        </label>
-                        {{ form.request_type }}
-                    </div>
-
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
-                            Message
-                        </label>
-                        {{ form.message }}
-                    </div>
-
-                    <div>
-                        <button
-                            type="submit"
-                            class="w-full custom-green text-white font-semibold py-3 px-6 rounded-lg hover:scale-105 transition-transform flex items-center justify-center"
-                        >
-                            <i class="fas fa-paper-plane mr-2"></i>
-                            Send Message
-                        </button>
-                    </div>
-                </form>
-
-                <div class="mt-8 pt-6 border-t border-gray-200">
-                    <div class="flex items-center justify-between text-sm text-gray-600">
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-clock text-green-500"></i>
-                            <span>Response time: Usually within a few hours</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-shield-alt text-green-500"></i>
-                            <span>100% Secure</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <button
+                    type="submit"
+                    class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center"
+                >
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    Submit Request
+                </button>
+            </form>
         </div>
-    </main>
+
+        <p class="text-center text-xs text-gray-400 mt-8 mb-4">
+            We respond to every request. If you don't hear from us within 24 hours, please check your spam folder.
+        </p>
+    </div>
+
 </body>
 </html>
