@@ -114,7 +114,8 @@ LOGGING = {
     'formatters': {
         'json': {
             '()': 'pythonjsonlogger.json.JsonFormatter',
-            'format': '%(asctime)s %(name)s %(levelname)s %(message)s',
+            'rename_fields': {'levelname': 'level', 'asctime': 'timestamp'},
+            'format': '%(asctime)s %(levelname)s %(name)s %(message)s',
         },
     },
     'handlers': {
@@ -126,6 +127,13 @@ LOGGING = {
     'root': {
         'handlers': ['console'],
         'level': 'INFO',
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
     },
 }
 
