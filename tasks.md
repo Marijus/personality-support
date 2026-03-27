@@ -1,0 +1,2 @@
+1. add github repo and push to master: git remote add origin git@github.com:Marijus/personality-support.git
+2. create dockerfile and make sure it runs works. follow production patterns from personality repo

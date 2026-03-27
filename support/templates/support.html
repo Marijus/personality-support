@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #10b981;
+            --cream-bg: #fef7ed;
+            --light-cream: #fffbf5;
+        }
+
+        body {
+            background-color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .custom-green {
+            background-color: var(--primary-green);
+        }
+
+        .custom-green:hover {
+            background-color: #059669;
+        }
+
+        .hero-section {
+            background-color: #fef7ed;
+        }
+    </style>
+</head>
+<body>
+<main>
+        <div class="hero-section py-12">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <div class="text-center mb-8">
+                    <h1 class="text-4xl font-bold text-gray-800 mb-4">Need Help? We're Here for You</h1>
+                    <p class="text-gray-600 text-lg">Get fast, friendly support from our team</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 py-12 max-w-2xl">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="bg-green-50 border-l-4 border-green-400 p-6 rounded-lg mb-8">
+                <div class="flex items-start space-x-3">
+                    <div class="text-2xl">&#10003;</div>
+                    <p class="text-gray-700 leading-relaxed">{{ message }}</p>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-lg mb-8">
+                <div class="flex items-start space-x-3">
+                    <div class="text-2xl">&#128161;</div>
+                    <div>
+                        <p class="text-gray-700 leading-relaxed">
+                            We respond very fast (usually within a few hours, always within 24h). Please contact us here instead of filing a chargeback — we'll resolve your issue right away.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Contact Support</h2>
+
+                {% if form.errors %}
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+                    {% for error in form.non_field_errors %}
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-exclamation-triangle text-red-500"></i>
+                        <p class="text-red-700 font-medium">{{ error }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <form id="supportForm" class="space-y-6" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                            Email Address <span class="text-red-500">*</span>
+                        </label>
+                        {{ form.email }}
+                    </div>
+
+                    <div>
+                        <label for="requestType" class="block text-sm font-medium text-gray-700 mb-2">
+                            Request Type
+                        </label>
+                        {{ form.request_type }}
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                            Message
+                        </label>
+                        {{ form.message }}
+                    </div>
+
+                    <div>
+                        <button
+                            type="submit"
+                            class="w-full custom-green text-white font-semibold py-3 px-6 rounded-lg hover:scale-105 transition-transform flex items-center justify-center"
+                        >
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+
+                <div class="mt-8 pt-6 border-t border-gray-200">
+                    <div class="flex items-center justify-between text-sm text-gray-600">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-clock text-green-500"></i>
+                            <span>Response time: Usually within a few hours</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-shield-alt text-green-500"></i>
+                            <span>100% Secure</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
