@@ -33,6 +33,14 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'personality-support-production.up.railway.app',
     'perstest.com',
+    'help-personality.org',
+    'localhost',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://perstest.com',
+    'https://help-personality.org',
+    'https://personality-support-production.up.railway.app',
 ]
 
 
