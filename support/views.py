@@ -35,7 +35,7 @@ class SupportView(FormView):
             messages.error(self.request, "Something went wrong. Please try again later.")
             return redirect('support')
 
-        logging.info("Support request received. data: %s", form.cleaned_data)
+        logging.info("Support request received. domain: %s, data: %s", self.request.get_host(), form.cleaned_data)
         return redirect('thank-you')
 
 
