@@ -26,7 +26,7 @@ class SupportView(FormView):
             BrevoClient(api_key=settings.BREVO_API_KEY).send_email(
                 from_email=settings.BREVO_FROM_EMAIL,
                 emails=[settings.BREVO_FROM_EMAIL],
-                subject=f"URGENT: {email} support request",
+                subject=f"URGENT: {email} refund request",
                 email_html=email_html,
                 reply_to=email,
             )
